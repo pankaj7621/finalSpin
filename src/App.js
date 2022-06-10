@@ -3,7 +3,7 @@ import React, { Component, useState } from "react";
 import WheelComponent from "./weel";
 import "react-wheel-of-prizes/dist/index.css";
 import "./styles.css";
-import IMAGES from "../assets";
+import IMAGES from "./assets";
 
 import TrPortal from "./portal";
 import Confetti from "react-confetti";
@@ -43,11 +43,13 @@ export class App extends Component {
     };
     return (
       <div
-        id="pankaj"
+        // id="pankaj"
         style={{
           display: "flex",
           justifyContent: "center",
-          marginTop: "150px"
+          paddingTop: "150px",
+          paddingBottom: "150px",
+          background: `url(${IMAGES.background})`
         }}
       >
         {this.state.show && <Confetti width={1600} height={1019} />}
