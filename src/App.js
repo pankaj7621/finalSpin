@@ -13,12 +13,35 @@ export class App extends Component {
     super(props);
     this.state = {
       portal: false,
-      show: false
+      show: false,
     };
   }
-
+ 
   render() {
-    const segments = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+    let objIndex = {
+      "Iphone13promax": 1, 
+      "Bosesurroundspeakers": 2, 
+      "Samsung65-InchCrystalUHD4KFlatSmartTV": 3, 
+      "MacBookAirMGN6314”Display,AppleM1ChipWith8-Core": 4, 
+      "KIATELLURIDE2022": 5,
+      "SAMSUNGFRONTLOADWASHINGMACHINE16KG": 6,
+      "10GRAMSGOLDCOIN": 7,
+      "VOUCHERFORGEORGIAFAMILYTRIPUPTO4": 8,
+      "AMAZONGIFTVOUCHERWORTH1000AED": 9,
+      "APPLEAIRPODSPRO":10
+    }
+    const segments = [
+      "I phone 13 pro max",
+      "Bose surround speakers",  
+      "Samsung 65-Inch Crystal UHD 4K Flat Smart TV ",
+      "MacBook Air MGN63 14” Display, Apple M1 Chip With 8-Core",
+      "KIA TELLURIDE 2022",
+      "SAMSUNG FRONT LOAD WASHING MACHINE 16KG",
+      "10GRAMS GOLD COIN",
+      "VOUCHER FOR GEORGIA FAMILY TRIP UPTO 4",
+      "AMAZON GIFT VOUCHER WORTH 1000AED",
+      "APPLE AIRPODS PRO",
+    ];
 
     const weelColors = () => {
       let arr = [];
@@ -56,7 +79,7 @@ export class App extends Component {
         <WheelComponent
           segments={segments}
           segColors={segColors}
-          winningSegment={"5"}
+          winningSegment={"8"}
           onFinished={(winner) => onFinished(winner)}
           primaryColor="gray"
           contrastColor="white"
@@ -68,10 +91,10 @@ export class App extends Component {
           // modal
           <div className="box">
             <div className="imageBox">
-              <img src={IMAGES[`image${this.state.show}`]} alt="" />
+              <img src={IMAGES[`image${objIndex[this.state.show.split(" ").join("")]}`]} alt="" />
             </div>
             <h2 className="titleWin">
-              CONGRATULATIONS!!! YOU HAVE WON THIS !!!
+              CONGRATULATIONS!!! YOU HAVE WON {this.state.show} !!!
             </h2>
             <div className="closeContainer">
               <button
